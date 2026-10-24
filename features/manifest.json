@@ -1,5 +1,5 @@
 {
-  "data_root": "C:\\Users\\haege\\Documents\\vscode\\ITB\\Tingkat IV\\PrakSpeech1\\data",
+  "data_root": "../data",
   "recordings": {
     "template/speaker01/speaker01_a_01.wav": {
       "feature_path": "template/speaker01/speaker01_a_01.npy",

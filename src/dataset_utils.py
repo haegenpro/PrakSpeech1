@@ -207,8 +207,8 @@ def extract_dataset_features(data_dir: str | Path = "data", output_dir: str | Pa
         relative = recording.path.relative_to(root).as_posix()
         feature_relative = str(Path(relative).with_suffix(".npy").as_posix())
         target = output / feature_relative
-        row = dict(file_path=str(recording.path), filename=recording.path.name,
-                   source_path=str(root / sources.get(relative, relative)),
+        row = dict(file_path=relative, filename=recording.path.name,
+                   source_path=sources.get(relative, relative),
                    speaker=recording.speaker, vowel=recording.vowel,
                    partition=recording.partition, sample_rate="", duration="",
                    number_of_samples="", original_sample_rate="", original_channels="",
@@ -257,7 +257,8 @@ def extract_dataset_features(data_dir: str | Path = "data", output_dir: str | Pa
     writer.writeheader()
     writer.writerows(rows)
     atomic_write(output / "metadata.csv", stream.getvalue().encode("utf-8"))
-    write_json(manifest_path, {"signature": signature, "data_root": str(root), "recordings": entries})
+    data_root = Path(os.path.relpath(root, output)).as_posix()
+    write_json(manifest_path, {"signature": signature, "data_root": data_root, "recordings": entries})
     return summary
 
 
@@ -271,17 +272,16 @@ def load_dataset(partition: str, features_dir: str | Path = "features") -> list[
         raise ValueError(f"Unknown partition: {partition}")
     output = Path(features_dir).resolve()
     manifest = json.loads((output / "manifest.json").read_text())
-    root = Path(manifest["data_root"])
+    root = (output / manifest["data_root"]).resolve()
     result = []
     with (output / "metadata.csv").open(newline="", encoding="utf-8") as stream:
         rows = sorted(csv.DictReader(stream), key=lambda row: row["file_path"])
     for row in rows:
         if row["partition"] != partition or row["validation_status"] != "ok":
             continue
-        source = Path(row["file_path"])
+        source = root / row["file_path"]
         recording = parse_recording(source, root)
-        key = source.relative_to(root).as_posix()
-        entry = manifest["recordings"].get(key)
+        entry = manifest["recordings"].get(row["file_path"])
         target = (output / row["feature_path"]).resolve()
         if (not target.is_relative_to(output) or not entry
                 or entry["feature_path"] != row["feature_path"]
