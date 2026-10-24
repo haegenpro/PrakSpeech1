@@ -1,0 +1,5 @@
+numpy>=2.0,<3
+scipy>=1.14,<2
+soundfile>=0.13,<0.14
+python_speech_features==0.6
+pytest>=8,<10

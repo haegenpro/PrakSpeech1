@@ -1,0 +1,388 @@
+{
+  "actual_internal": 50,
+  "audio_formats": {
+    "data\\template\\speaker01\\speaker01_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker01\\speaker01_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker01\\speaker01_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker01\\speaker01_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker01\\speaker01_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker02\\speaker02_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker02\\speaker02_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker02\\speaker02_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker02\\speaker02_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker02\\speaker02_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker03\\speaker03_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker03\\speaker03_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker03\\speaker03_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker03\\speaker03_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker03\\speaker03_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker04\\speaker04_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker04\\speaker04_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker04\\speaker04_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker04\\speaker04_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker04\\speaker04_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker05\\speaker05_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker05\\speaker05_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker05\\speaker05_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker05\\speaker05_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\template\\speaker05\\speaker05_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker01\\speaker01_a_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker01\\speaker01_e_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker01\\speaker01_i_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker01\\speaker01_o_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker01\\speaker01_u_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker02\\speaker02_a_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker02\\speaker02_e_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker02\\speaker02_i_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker02\\speaker02_o_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker02\\speaker02_u_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker03\\speaker03_a_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker03\\speaker03_e_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker03\\speaker03_i_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker03\\speaker03_o_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker03\\speaker03_u_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker04\\speaker04_a_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker04\\speaker04_e_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker04\\speaker04_i_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker04\\speaker04_o_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker04\\speaker04_u_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker05\\speaker05_a_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker05\\speaker05_e_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker05\\speaker05_i_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker05\\speaker05_o_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\closed\\speaker05\\speaker05_u_02.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s01\\external_g07_s01_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s01\\external_g07_s01_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s01\\external_g07_s01_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s01\\external_g07_s01_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s01\\external_g07_s01_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s02\\external_g07_s02_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s02\\external_g07_s02_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s02\\external_g07_s02_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s02\\external_g07_s02_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s02\\external_g07_s02_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s03\\external_g07_s03_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s03\\external_g07_s03_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s03\\external_g07_s03_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s03\\external_g07_s03_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s03\\external_g07_s03_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s04\\external_g07_s04_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s04\\external_g07_s04_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s04\\external_g07_s04_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s04\\external_g07_s04_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s04\\external_g07_s04_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s05\\external_g07_s05_a_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s05\\external_g07_s05_e_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s05\\external_g07_s05_i_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s05\\external_g07_s05_o_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    },
+    "data\\test\\open\\external_g07_s05\\external_g07_s05_u_01.wav": {
+      "channels": 1,
+      "sample_rate": 16000,
+      "subtype": "PCM_16"
+    }
+  },
+  "decoded_recordings": 75,
+  "duplicate_audio": [],
+  "errors": [],
+  "expected_internal": 50,
+  "format_inconsistencies": false,
+  "missing": [],
+  "open_recordings": 25,
+  "valid": true
+}
