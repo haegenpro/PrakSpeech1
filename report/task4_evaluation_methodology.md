@@ -7,9 +7,9 @@ setelah melihat data uji.
 |---|---|---|
 | Closed recording | Partisi `template` (rekaman yang sama dengan template) | 25 |
 | Closed speakers | Partisi `closed` (speaker sama, take 02) | 25 |
-| Open speakers | Partisi `open` (external_g07_s01..05) | 25 |
+| Open speakers | Partisi `open` (16 speaker eksternal dari G03, G04, G07, G09) | 80 |
 
-Akurasi = prediksi benar / jumlah data uji x 100%. Rata-rata = rata-rata tiga skenario (masing-masing 25 data, jadi sama dengan akurasi gabungan 75 data).
+Akurasi = prediksi benar / jumlah data uji x 100%. Rata-rata pada tabel ringkasan adalah rata-rata tiga skenario dengan bobot sama. Jumlah data tiap skenario adalah 25, 25, dan 80, sehingga rata-rata ini berbeda dari akurasi gabungan 130 data. Tiap sistem menghasilkan 130 prediksi; dua sistem menghasilkan 260 baris prediksi.
 
 | Perintah | Fungsi |
 |---|---|

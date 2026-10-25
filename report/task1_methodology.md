@@ -13,9 +13,11 @@ bukan salinan rekaman pertama.
 Identitas internal ditetapkan sebagai speaker01 (Peter Wongsoredjo), speaker02
 (Jessica Allen), speaker03 (Haegen Quinston), speaker04 (Nathaniel JR), dan
 speaker05 (Maheswara Bayu Kaindra). Variasi nama pada berkas sumber dipetakan
-secara eksplisit, termasuk Peter/S01, Nathan/Nathaniel, serta Indra. Berkas asli
-dipertahankan. Salinan dengan nama baku ditempatkan pada direktori kanonis,
-sedangkan sumber, tujuan, dan hash SHA256 dicatat dalam manifest impor.
+secara eksplisit, termasuk Peter/S01, Nathan/Nathaniel, serta Indra. Setiap rekaman
+disimpan sekali dengan nama baku pada direktori kanonis. Salinan sumber dihapus
+hanya setelah seluruh pemetaan lolos validasi dan isi tujuan terbukti identik
+berdasarkan SHA256. Sumber historis, tujuan, alias, dan hash tetap dicatat dalam
+manifest impor, termasuk setelah setup dijalankan ulang.
 
 ## B. Pembagian Data
 
@@ -25,9 +27,12 @@ partisi internal diharapkan berisi 25 rekaman. Pembagian ini memisahkan pengucap
 untuk pelatihan dan pengujian, meskipun pembicaranya sama. Skenario closed-recording
 dapat menggunakan kembali fitur template tanpa membuat partisi baru.
 
-Rekaman kelompok G07 digunakan sebagai data open-speaker berdasarkan konfirmasi
-pemilik dataset. Identitasnya diberi awalan external_g07 agar tidak tertukar dengan
-pembicara internal bernomor serupa. Data eksternal tidak digunakan untuk penyusunan
+Data open-speaker berasal dari 16 orang: G03/Kel3 (S01, S02, S03, S05), G04
+(S03, S04), G07 (S01–S05), dan G09 (S01–S05). Setiap orang menyediakan lima
+vokal, sehingga terdapat 80 rekaman eksternal. Identitas seperti
+external_g03_s01 mempertahankan kelompok dan nomor pembicara. Direktori audio
+adalah template/<speaker>, test/closed_speakers/<speaker>, dan
+test/open_speakers/<external_id>. Data eksternal tidak digunakan untuk penyusunan
 template maupun estimasi model Gaussian.
 
 ## C. Preprocessing Audio
@@ -103,12 +108,13 @@ turunan temporal, masukan sangat pendek, kegagalan decoding, indeks dataset,
 konflik impor, persistensi, serta kompatibilitas cache.
 
 Pada pemeriksaan 25 Oktober 2026 (WIB), ditemukan 25 rekaman template, 25 rekaman
-closed-speaker, dan 25 rekaman open-speaker. Seluruh 75 berkas berhasil didekode
-dan berformat mono PCM16 pada 16.000 Hz. Tidak ditemukan rekaman internal hilang,
-nama kanonis tidak valid, atau duplikasi audio eksak. Ekstraksi konfigurasi awal
-menghasilkan 75 matriks tanpa kegagalan, dengan rentang 70–495 frame per rekaman
-dan total 15.564 frame. Pengulangan ekstraksi menggunakan kembali seluruh 75
-hasil yang kompatibel.
+closed-speaker, dan 80 rekaman open-speaker dari 16 pembicara eksternal. Seluruh
+130 berkas berhasil didekode dan berformat mono PCM16 pada 16.000 Hz. Tidak
+ditemukan rekaman internal hilang, vokal eksternal hilang, nama kanonis tidak valid,
+atau duplikasi audio eksak. Ekstraksi menghasilkan 130 matriks tanpa kegagalan,
+dengan rentang 33–495 frame dan total 22,147 frame. Pengulangan ekstraksi
+menggunakan kembali seluruh 130 hasil yang kompatibel. Semua hash audio unik
+cocok dengan kondisi sebelum migrasi; sumber historis tetap tersimpan di manifest.
 
 Angka tersebut merupakan pemeriksaan teknis, bukan bukti ketepatan pelafalan
 atau kinerja pengenalan. Perbarui angka apabila data atau konfigurasi berubah.

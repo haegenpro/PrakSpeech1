@@ -18,8 +18,8 @@ from .preprocessing import (DEFAULT_CONFIG, PreprocessingConfig, extract_mfcc39,
 
 VOWELS = ("a", "i", "u", "e", "o")
 SPEAKERS = tuple(f"speaker{i:02d}" for i in range(1, 6))
-PARTITIONS = {"template": Path("template"), "closed": Path("test/closed"),
-              "open": Path("test/open")}
+PARTITIONS = {"template": Path("template"), "closed": Path("test/closed_speakers"),
+              "open": Path("test/open_speakers")}
 ALIASES = {"Peter": "speaker01", "S01": "speaker01", "Allen": "speaker02",
            "Haegen": "speaker03", "Nathan": "speaker04", "Nathaniel": "speaker04",
            "Indra": "speaker05"}
@@ -98,53 +98,131 @@ def discover_dataset(data_dir: str | Path = "data") -> tuple[list[Recording], li
 
 
 def setup_dataset(data_dir: str | Path = "data", output_dir: str | Path = "features") -> dict:
-    """Create folders and import legacy recordings without modifying originals.
+    """Consolidate legacy WAVs after preflight and byte-for-byte verification.
 
-    The persisted import manifest explicitly records each source-to-copy mapping.
-    Existing destinations must have exactly the same bytes as their source.
+    Historical source paths remain in the manifest after duplicate originals are
+    removed. A second run verifies canonical files without losing provenance.
     """
-    root = Path(data_dir)
-    for base in (root, Path(output_dir)):
-        for partition, folder in PARTITIONS.items():
-            speakers = SPEAKERS if partition != "open" else ("external_speaker01",)
-            for speaker in speakers:
-                target = base / folder / speaker
-                target.mkdir(parents=True, exist_ok=True)
-                (target / ".gitkeep").touch(exist_ok=True)
+    root = Path(data_dir).resolve()
+    def canonical_relative(value):
+        value = Path(value).as_posix()
+        for old, new in (("test/closed/", "test/closed_speakers/"),
+                         ("test/open/", "test/open_speakers/")):
+            if value.startswith(old):
+                return new + value[len(old):]
+        return value
+
+    def safe_path(relative):
+        path = (root / relative).resolve()
+        if not path.is_relative_to(root):
+            raise ValueError(f"Path escapes dataset: {relative}")
+        return path
+
     mappings = []
     for path in sorted((root / "train").rglob("*.wav")):
         match = re.fullmatch(r"([A-Za-z0-9]+)_([AIUEO])_?(0?[12])\.wav", path.name)
-        if not match or match[1] not in ALIASES:
+        if (not match or match[1] not in ALIASES
+                or path.parent != root / "train" / match[2].lower()):
             raise ValueError(f"Unmapped legacy recording: {path}")
         speaker, vowel, take = ALIASES[match[1]], match[2].lower(), int(match[3])
         partition = "template" if take == 1 else "closed"
         destination = root / PARTITIONS[partition] / speaker / f"{speaker}_{vowel}_{take:02d}.wav"
         mappings.append((path, destination))
     for vowel in VOWELS:
-        for path in sorted((root / "test" / vowel).glob("*.wav")):
-            match = re.fullmatch(r"G07_S(0[1-5])_([AIUEO])\.wav", path.name)
-            if not match or match[2].lower() != vowel:
+        for path in sorted((root / "test" / vowel).rglob("*.wav")):
+            match = re.fullmatch(r"(?:G(\d{2})|Kel(\d+))_S(\d{2})_([AIUEO])(\d{2})?\.wav", path.name)
+            if not match or match[4].lower() != vowel or path.parent != root / "test" / vowel:
                 raise ValueError(f"Unmapped external recording: {path}")
-            speaker = f"external_g07_s{match[1]}"
-            mappings.append((path, root / PARTITIONS["open"] / speaker / f"{speaker}_{vowel}_01.wav"))
-    destinations = set()
-    entries = []
+            group = int(match[1] or match[2])
+            speaker = f"external_g{group:02d}_s{match[3]}"
+            take = match[5] or "01"
+            mappings.append((path, root / PARTITIONS["open"] / speaker / f"{speaker}_{vowel}_{take}.wav"))
+    legacy_dirs = [root / "train", *(root / "test" / v for v in VOWELS)]
+    for old in ("test/closed", "test/open"):
+        legacy_dirs.append(root / old)
+        for source in sorted((root / old).rglob("*.wav")):
+            destination = safe_path(canonical_relative(source.relative_to(root)))
+            parse_recording(destination, root)
+            mappings.append((source, destination))
+
+    manifest_path = root / "import_manifest.json"
+    previous = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    entries = {}
+    expected_hashes = {}
+    for item in previous.get("recordings", []):
+        entry = dict(item, canonical_path=canonical_relative(item["canonical_path"]))
+        safe_path(entry["source_path"])
+        destination = safe_path(entry["canonical_path"])
+        parse_recording(destination, root)
+        entries[entry["source_path"]] = entry
+        if destination in expected_hashes and expected_hashes[destination] != entry["sha256"]:
+            raise ValueError(f"Conflicting historical destination: {destination}")
+        expected_hashes[destination] = entry["sha256"]
+    candidates = {}
+    newly_imported = set()
     for source, destination in mappings:
-        if destination in destinations:
-            raise ValueError(f"Multiple sources assigned to {destination}")
-        destinations.add(destination)
+        safe_path(source.relative_to(root))
+        if not source.resolve().is_relative_to(root):
+            raise ValueError(f"Source escapes dataset: {source}")
         source_hash = digest(source)
+        if destination in expected_hashes and expected_hashes[destination] != source_hash:
+            raise ValueError(f"Conflicting destination: {destination}")
         if destination.exists() and digest(destination) != source_hash:
             raise ValueError(f"Conflicting destination: {destination}")
-        entries.append({"source_path": source.relative_to(root).as_posix(),
-                        "canonical_path": destination.relative_to(root).as_posix(),
-                        "sha256": source_hash})
-    for source, destination in mappings:
+        expected_hashes[destination] = source_hash
+        candidates[destination] = source
+        source_relative = source.relative_to(root).as_posix()
+        # Preserve upload provenance rather than adding redundant migration aliases.
+        if not source_relative.startswith(("test/closed/", "test/open/")) or not any(
+                e["canonical_path"] == destination.relative_to(root).as_posix() for e in entries.values()):
+            entries[source_relative] = {"source_path": source_relative,
+                "canonical_path": destination.relative_to(root).as_posix(), "sha256": source_hash}
+            newly_imported.add(destination)
+    for destination, expected in expected_hashes.items():
+        if destination.exists():
+            if digest(destination) != expected:
+                raise ValueError(f"Conflicting destination: {destination}")
+        elif destination not in candidates:
+            raise ValueError(f"Missing canonical recording: {destination}")
+    records, errors = discover_dataset(root)
+    if errors:
+        raise ValueError("; ".join(errors))
+    for destination, source in candidates.items():
         if not destination.exists():
             atomic_write(destination, source.read_bytes())
-    manifest = {"aliases": ALIASES, "recordings": entries}
-    write_json(root / "import_manifest.json", manifest)
-    return {"imported_recordings": len(entries)}
+    for destination, expected in expected_hashes.items():
+        if digest(destination) != expected:
+            raise ValueError(f"Verification failed: {destination}")
+    # Recheck every original before removing any source, including duplicate aliases.
+    for source, destination in mappings:
+        if digest(source) != digest(destination):
+            raise ValueError(f"Source changed during import: {source}")
+    manifest = {**previous, "aliases": {**ALIASES, **previous.get("aliases", {})},
+                "recordings": sorted(entries.values(), key=lambda e: e["source_path"])}
+    write_json(manifest_path, manifest)
+    for source, destination in mappings:
+        source.unlink()
+    for folder in legacy_dirs:
+        if folder.exists():
+            for directory in sorted([folder, *(p for p in folder.rglob("*") if p.is_dir())],
+                                    key=lambda p: len(p.parts), reverse=True):
+                placeholder = directory / ".gitkeep"
+                if placeholder.is_file():
+                    placeholder.unlink()
+                if not any(directory.iterdir()):
+                    directory.rmdir()
+    for base in (root, Path(output_dir).resolve()):
+        placeholder_dir = base / PARTITIONS["open"] / "external_speaker01"
+        if placeholder_dir.exists() and all(p.name == ".gitkeep" for p in placeholder_dir.iterdir()):
+            (placeholder_dir / ".gitkeep").unlink(missing_ok=True)
+            placeholder_dir.rmdir()
+        for partition, folder in PARTITIONS.items():
+            (base / folder).mkdir(parents=True, exist_ok=True)
+            if partition != "open":
+                for speaker in SPEAKERS:
+                    (base / folder / speaker).mkdir(parents=True, exist_ok=True)
+    return {"imported_recordings": len(newly_imported), "removed_duplicates": len(mappings),
+            "provenance_entries": len(entries)}
 
 
 def validate_dataset(data_dir: str | Path = "data") -> dict:
@@ -170,13 +248,18 @@ def validate_dataset(data_dir: str | Path = "data") -> dict:
             decoded += 1
         except (ValueError, OSError) as exc:
             errors.append(f"{recording.path}: {exc}")
+    open_speakers = sorted({r.speaker for r in records if r.partition == "open"})
+    open_missing = [f"{speaker}/{vowel}" for speaker in open_speakers for vowel in VOWELS
+                    if not any(r.speaker == speaker and r.vowel == vowel for r in records
+                               if r.partition == "open")]
     missing = sorted(str(p) for p in expected - actual)
     return {"expected_internal": 50, "actual_internal": len(actual),
             "open_recordings": sum(r.partition == "open" for r in records),
+            "open_speakers": len(open_speakers), "missing_open_vowels": open_missing,
             "decoded_recordings": decoded, "missing": missing, "errors": errors,
             "duplicate_audio": duplicates, "audio_formats": formats,
             "format_inconsistencies": len({tuple(v.values()) for v in formats.values()}) > 1,
-            "valid": not (missing or errors or duplicates)}
+            "valid": not (missing or errors or duplicates or open_missing)}
 
 
 def _signature(config: PreprocessingConfig) -> dict:

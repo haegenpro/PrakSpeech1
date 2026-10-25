@@ -27,16 +27,25 @@ Five speakers × five vowels × two takes = **50 internal recordings**. Each spe
 contributes five template and five closed-speaker test recordings. External speakers
 are separate identities and have no fixed required recording count.
 
-Preserved `data/train/<vowel>/` recordings map take 1 to template and take 2 to
-closed-speaker testing. Preserved `data/test/<vowel>/G07_SXX_V.wav` recordings map
-to open-speaker testing, as confirmed by the owner. Their identities become
-`external_g07_sXX`, distinct from internal IDs. `data/import_manifest.json` records
-each explicit source/canonical mapping, aliases, and SHA256.
+The dataset keeps one canonical WAV per recording. Legacy `data/train/<vowel>/`
+recordings map take 1 to template and take 2 to closed-speaker testing. External
+uploads map to open-speaker testing: G03 (Kel3) speakers 01, 02, 03, 05; G04
+speakers 03, 04; G07 speakers 01–05; and G09 speakers 01–05. This gives 16 external
+speakers and 80 open recordings, with five vowels per speaker.
+
+External identities include the group, such as `external_g03_s01`, so matching
+speaker numbers from different groups remain distinct. `data/import_manifest.json`
+retains original source paths, canonical paths, aliases, and SHA256 hashes.
+Setup validates all mappings and destinations before removing any source copy,
+then verifies byte equality and removes duplicate originals. Rerunning setup
+preserves provenance and checks the retained canonical files. Add future data
+directly to canonical directories; the legacy importer also accepts
+`GXX_SYY_V.wav`, `GXX_SYY_VTT.wav`, and `KelN_SYY_V.wav` in matching vowel folders.
 
 Canonical filenames: `speaker01_a_01.wav` (template), `speaker01_a_02.wav` (closed),
 and `external_g07_s01_a_01.wav` (open). External IDs start with `external_`; vowel
-labels are lowercase. Add future data directly to canonical directories. Extend
-the explicit importer mapping for other legacy naming conventions.
+labels are lowercase. The public partition keys remain `template`, `closed`, and
+`open`; these keys map to the canonical directories above.
 
 ## 4. Recording instructions
 
@@ -52,17 +61,15 @@ synthetic signals.
 ```text
 PrakSpeech1/
 ├── data/
-│   ├── train/<vowel>/                 # preserved internal originals
 │   ├── template/speaker01..05/         # canonical take 01
 │   ├── test/
-│   │   ├── <vowel>/                    # preserved G07 originals
-│   │   ├── closed/speaker01..05/       # canonical take 02
-│   │   └── open/external_g07_s01..05/  # external recordings
+│   │   ├── closed_speakers/speaker01..05/ # canonical take 02
+│   │   └── open_speakers/<external_id>/  # 16 speakers, 80 recordings
 │   └── import_manifest.json
 ├── features/
 │   ├── template/<speaker>/*.npy
-│   ├── test/closed/<speaker>/*.npy
-│   ├── test/open/<speaker>/*.npy
+│   ├── test/closed_speakers/<speaker>/*.npy
+│   ├── test/open_speakers/<speaker>/*.npy
 │   ├── metadata.csv
 │   └── manifest.json
 ├── src/{__init__,preprocessing,dataset_utils}.py
@@ -181,7 +188,7 @@ error row; invalid names appear in CLI diagnostics and the validation report.
 source hashes and feature hashes. Each file replacement is atomic. An interrupted
 multi-file run may need re-extraction; loaders reject index/hash mismatches.
 Unindexed `.npy` files are ignored. Outputs are reused only when provenance matches.
-Generated source paths are absolute; rerun extraction after moving the project.
+Paths in the index are relative; retain the data/features relationship when moving the project.
 Canonical WAVs must remain available for loader provenance checks.
 
 ## 11. Integration instructions for DTW and Gaussian
@@ -216,7 +223,7 @@ frames_by_vowel = {
 This estimates no parameters. Do not mix test frames into training. The practicum's
 **closed-recording** scenario reuses template recordings as evaluation inputs;
 **closed-speaker** uses different takes from the same speakers; **open-speaker**
-uses G07 speakers. Closed-recording needs no additional copied partition.
+uses G03, G04, G07, and G09 speakers. Closed-recording needs no additional copied partition.
 For custom settings, pass the same `PreprocessingConfig` to extraction and
 `process_audio_file` during inference; consult the saved manifest.
 
@@ -234,13 +241,13 @@ Measured on **25 October 2026 (WIB)**:
 | Check | Observed result |
 |---|---|
 | Internal dataset | 25 template + 25 closed; all 50 expected files present |
-| External dataset | 25 open recordings |
-| Decoding | 75 successful; no invalid names or exact audio duplicates |
-| Format | All 75 mono 16 kHz PCM16 WAV |
-| Extraction | 75 files, 0 failures |
-| Repeated extraction | 75 compatible files reused |
-| Frames | 70–495 per recording; 15,564 total |
-| Integration loader | 25 records per partition |
+| External dataset | 80 open recordings from 16 speakers |
+| Decoding | 130 successful; no invalid names or exact audio duplicates |
+| Format | All 130 mono 16 kHz PCM16 WAV |
+| Extraction | 130 indexed files, 0 failures |
+| Repeated extraction | 130 compatible files reused |
+| Frames | 33–495 per recording; 22,147 total |
+| Integration loader | 25 template, 25 closed, 80 open |
 
 The saved JSON records per-file validation; current pytest output reports test
 results. Rerun checks after changing recordings or configuration.

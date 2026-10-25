@@ -10,12 +10,412 @@
   },
   "recordings": [
     {
+      "canonical_path": "test/open_speakers/external_g04_s03/external_g04_s03_a_01.wav",
+      "sha256": "8a5dc23c13dcaef8c45edeec995544feb06fc92a4fffa29e80611711c3362e01",
+      "source_path": "test/a/G04_S03_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s04/external_g04_s04_a_01.wav",
+      "sha256": "033e097a93d320e270f7b2c0ddef97b811aaa3d355ef6a99f9d1cd1f7e55ea16",
+      "source_path": "test/a/G04_S04_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s01/external_g07_s01_a_01.wav",
+      "sha256": "f9aed0a065ea4b224293d880357ac5c65474508df5b07f3ad03c7ad6833ca1c3",
+      "source_path": "test/a/G07_S01_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s02/external_g07_s02_a_01.wav",
+      "sha256": "620853fbd28787b43324fc456020aec9fb77461ab52e386984211864fd6e07b9",
+      "source_path": "test/a/G07_S02_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s03/external_g07_s03_a_01.wav",
+      "sha256": "eb1dd7633f8163cb676571b68895394e1239c8aafd100ecbf6c9c615e4701066",
+      "source_path": "test/a/G07_S03_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s04/external_g07_s04_a_01.wav",
+      "sha256": "fc90eb993c6af56209caa0f7be8c294073e93027c0c19b1f35d5c8a7bdc51ea0",
+      "source_path": "test/a/G07_S04_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s05/external_g07_s05_a_01.wav",
+      "sha256": "1311a55c55bb3eaf0ae56bae7166551e841924ac60838a71a7bfd2cabad94e96",
+      "source_path": "test/a/G07_S05_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s01/external_g09_s01_a_01.wav",
+      "sha256": "5493bb465963ff68577ec1987920a0f94e3c8c522926a03765c8291462fc76e5",
+      "source_path": "test/a/G09_S01_A01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s02/external_g09_s02_a_01.wav",
+      "sha256": "e310e44529ed89c47c021d88872bd2b2fe9abe0a6ad86d7129e9e2122e49641b",
+      "source_path": "test/a/G09_S02_A01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s03/external_g09_s03_a_01.wav",
+      "sha256": "666ba07725f678b9682a1ed0abfb4dc23e2b9983abb7ad6ca81abc4959536196",
+      "source_path": "test/a/G09_S03_A01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s04/external_g09_s04_a_01.wav",
+      "sha256": "60423d2384130d94e17794382c89fe3ab4b5da66d6e488933f20191c38f90dda",
+      "source_path": "test/a/G09_S04_A01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s05/external_g09_s05_a_01.wav",
+      "sha256": "11d29b3028d0f9df733324e945f2d65202f1ebc9f93956738a5777cbaf39d16b",
+      "source_path": "test/a/G09_S05_A01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s01/external_g03_s01_a_01.wav",
+      "sha256": "f830417de3caa07a697409844e3916c5f1c9f7d03a3632ac361aa170d7a6cb16",
+      "source_path": "test/a/Kel3_S01_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s02/external_g03_s02_a_01.wav",
+      "sha256": "d2b7a0edf8f28130401e9f4084d87013717d278c4a6791abe0913ef06483a0b0",
+      "source_path": "test/a/Kel3_S02_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s03/external_g03_s03_a_01.wav",
+      "sha256": "0405f2aa9350487d4ba2aef9dcd6fd5f680f5ca9a1ebf1b8f8466e7630d30173",
+      "source_path": "test/a/Kel3_S03_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s05/external_g03_s05_a_01.wav",
+      "sha256": "429e7f6ce794f98d0001c2d70b398e10a63651cde32608a8edce998862f35f8b",
+      "source_path": "test/a/Kel3_S05_A.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s03/external_g04_s03_e_01.wav",
+      "sha256": "1ae04aec35d67d0e5af5fc4117a4e845168f622dd12d020b771fe734cd920db2",
+      "source_path": "test/e/G04_S03_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s04/external_g04_s04_e_01.wav",
+      "sha256": "2857aa42fe1a2c7554268e1bcfac6d5dfa014b545a99beb1259f9a7d208b860e",
+      "source_path": "test/e/G04_S04_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s01/external_g07_s01_e_01.wav",
+      "sha256": "f3ba8bb7d5ab054a9c226a6093b8053f1392770e17a20b0171caeb9bd6f6d495",
+      "source_path": "test/e/G07_S01_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s02/external_g07_s02_e_01.wav",
+      "sha256": "31c6f1124134857fac6e44949748cc406f891bc9dd05963ee7be4ddb2c330c41",
+      "source_path": "test/e/G07_S02_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s03/external_g07_s03_e_01.wav",
+      "sha256": "0f6185aa73aa7b2dbdbac13c76e99624ad7f2d6fd503e412d1ad46f91785c2e3",
+      "source_path": "test/e/G07_S03_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s04/external_g07_s04_e_01.wav",
+      "sha256": "1e026f38902c631112dd0202a09ae29e861a2bc2540b56a0d72121d8144f554b",
+      "source_path": "test/e/G07_S04_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s05/external_g07_s05_e_01.wav",
+      "sha256": "095a16d61a4e901da49b6d4e661073b404e6bc62d1bfd2d968b518408ac11e23",
+      "source_path": "test/e/G07_S05_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s01/external_g09_s01_e_01.wav",
+      "sha256": "5892e9f3bb375b4b21a16dc35e5efbe7620d9701b377ef0b85bee8fb2b92eb5d",
+      "source_path": "test/e/G09_S01_E01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s02/external_g09_s02_e_01.wav",
+      "sha256": "ef47bf7d460c0b8843f9800ede9347531d4b97fab5976ec1f0e012e8013079b7",
+      "source_path": "test/e/G09_S02_E01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s03/external_g09_s03_e_01.wav",
+      "sha256": "3510fa76f3800c6b5785ffa117fb1caa3b1911a51cf93771695d0cecb7dcad86",
+      "source_path": "test/e/G09_S03_E01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s04/external_g09_s04_e_01.wav",
+      "sha256": "dada7eedc4db532c1115d8a7393bb4ffe4d7a8a7ce55ca09a5e28dc2b211f7dc",
+      "source_path": "test/e/G09_S04_E01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s05/external_g09_s05_e_01.wav",
+      "sha256": "63d048c3eb12759e844120724f0129e91902db177347fd797c8b3b8e9d9d7421",
+      "source_path": "test/e/G09_S05_E01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s01/external_g03_s01_e_01.wav",
+      "sha256": "7771d1e948061198b23004f84121018d68dbeb1ef6ff85c296f3b1cf8a3f7c4f",
+      "source_path": "test/e/Kel3_S01_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s02/external_g03_s02_e_01.wav",
+      "sha256": "cdafaf0d3a493de77ccc776716a7365949127a73c8867632d8197b16df81957c",
+      "source_path": "test/e/Kel3_S02_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s03/external_g03_s03_e_01.wav",
+      "sha256": "bb03c633add96f50be0bc8cdbbefef8475a1306d6cf0d9800e3de08cef03933f",
+      "source_path": "test/e/Kel3_S03_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s05/external_g03_s05_e_01.wav",
+      "sha256": "4c6287e0df536fa867338719b3f8d891108710818d585bb691aa20554f275c1e",
+      "source_path": "test/e/Kel3_S05_E.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s03/external_g04_s03_i_01.wav",
+      "sha256": "1c18918c6a918e2398cc3130ba4612daefa9b5c84bf2e446468e3feadaa57ef9",
+      "source_path": "test/i/G04_S03_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s04/external_g04_s04_i_01.wav",
+      "sha256": "280fc9a2fa8fa35cf2a125f1ab07b1ecc6ded88cc05dda81ebef2c32c4e86b6a",
+      "source_path": "test/i/G04_S04_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s01/external_g07_s01_i_01.wav",
+      "sha256": "80a2de357b91a989581b53dd6047a869b82b1e5c45a00acced331933ee5c3b2b",
+      "source_path": "test/i/G07_S01_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s02/external_g07_s02_i_01.wav",
+      "sha256": "c44e1a7e408acf724fc6478399bc4c89500df578e3bae61d3bdadd4b193d3248",
+      "source_path": "test/i/G07_S02_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s03/external_g07_s03_i_01.wav",
+      "sha256": "3f5231625b91a296f461a098ad72792febefcc2e946fdb5c2fa9ff8dea6530df",
+      "source_path": "test/i/G07_S03_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s04/external_g07_s04_i_01.wav",
+      "sha256": "c9adf27d89c1f59a7bb59d9d78b4e8d20163c6f27d23960a571b7547b53cc784",
+      "source_path": "test/i/G07_S04_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s05/external_g07_s05_i_01.wav",
+      "sha256": "1ce1bfda42881264ab074e0db7df0617221ffdf9019c3880455fb34dffd02318",
+      "source_path": "test/i/G07_S05_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s01/external_g09_s01_i_01.wav",
+      "sha256": "275b30a3c4d4d450134e1a9f2dc915cfc53957575b4dcf888245effc0d15e677",
+      "source_path": "test/i/G09_S01_I01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s02/external_g09_s02_i_01.wav",
+      "sha256": "def10dbc85bd17ddbfabb7b15b15b31b3f70aa9ed5a60dcf3a9f5ec4ca4b32ab",
+      "source_path": "test/i/G09_S02_I01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s03/external_g09_s03_i_01.wav",
+      "sha256": "4a9a5f05cb1bd2afa4ab94754205886fb4ab78aee5c16899843e7aa752736712",
+      "source_path": "test/i/G09_S03_I01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s04/external_g09_s04_i_01.wav",
+      "sha256": "2f3124161ade0a4b8537f5973fe8531ebfec5f7169ab004ab562f154aeb9286d",
+      "source_path": "test/i/G09_S04_I01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s05/external_g09_s05_i_01.wav",
+      "sha256": "de5e1b1fa8d2cde37ccf6952cc824831912983509ff9295c84c5d762f81798d4",
+      "source_path": "test/i/G09_S05_I01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s01/external_g03_s01_i_01.wav",
+      "sha256": "6699a104353bcaf5f5a708402ac1b18f2099529b29db95af0cd4cd914cf4aaa8",
+      "source_path": "test/i/Kel3_S01_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s02/external_g03_s02_i_01.wav",
+      "sha256": "447f6bd2307d6478f0627c1acec83c730fce3619a6ebd7bffb039b8b9834fc3e",
+      "source_path": "test/i/Kel3_S02_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s03/external_g03_s03_i_01.wav",
+      "sha256": "725a3b4dbec8aa37c989b7699f8c4c9a53a65d8c1c171e0fcc427aac9fdd6aa6",
+      "source_path": "test/i/Kel3_S03_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s05/external_g03_s05_i_01.wav",
+      "sha256": "0651c7c605bb6bd8ee49b46f92797af37f1dde962db0f78edbbb78e15cb27485",
+      "source_path": "test/i/Kel3_S05_I.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s03/external_g04_s03_o_01.wav",
+      "sha256": "e1291c98c3cb8fb278c2f88f4bf2f8f00376cb3fd7850408472289c6e4009cad",
+      "source_path": "test/o/G04_S03_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s04/external_g04_s04_o_01.wav",
+      "sha256": "b10d1268b9243eff852e32f480944e5c5d5e8880b7b83d25d4d0b5e09aa185e0",
+      "source_path": "test/o/G04_S04_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s01/external_g07_s01_o_01.wav",
+      "sha256": "462d97b417c70ab65ff4de0d0fffca694e7cde64d6ab601a1de03e89f3aa450d",
+      "source_path": "test/o/G07_S01_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s02/external_g07_s02_o_01.wav",
+      "sha256": "617e432419067b26378c57b8a5cd3bf8f4d0e0c7c22a11ebe4e9c10954cc97fd",
+      "source_path": "test/o/G07_S02_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s03/external_g07_s03_o_01.wav",
+      "sha256": "431da9b5e499f2e87a5e20b9a5b050d155698f247cfea756ae81a794449f6e10",
+      "source_path": "test/o/G07_S03_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s04/external_g07_s04_o_01.wav",
+      "sha256": "1e417c2bbe318ccc3ff2f4238cd97e20c93d4db9bb291062bc2e1f3b4f1ae822",
+      "source_path": "test/o/G07_S04_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s05/external_g07_s05_o_01.wav",
+      "sha256": "7edfd79ab38a515e19e9aabe07a213c0dd00764cfedbbfdd6802ada33b59ecd2",
+      "source_path": "test/o/G07_S05_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s01/external_g09_s01_o_01.wav",
+      "sha256": "47cf9dcdb93c23710298d26d884cbff52a3c599dc8595e36b6a8c20cda5909cf",
+      "source_path": "test/o/G09_S01_O01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s02/external_g09_s02_o_01.wav",
+      "sha256": "6e997868282f226ab67f46126e8594fa8374e4fbe55b68625c1c35868f172b3d",
+      "source_path": "test/o/G09_S02_O01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s03/external_g09_s03_o_01.wav",
+      "sha256": "2bdd135b9e3d049834e36214124119ebce86868917c371bd810bd233d2e16722",
+      "source_path": "test/o/G09_S03_O01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s04/external_g09_s04_o_01.wav",
+      "sha256": "694f6dc1e78d27217bf4d3e71218125ef9983b5c74023313cf8de358352a82f9",
+      "source_path": "test/o/G09_S04_O01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s05/external_g09_s05_o_01.wav",
+      "sha256": "3174562f0293d0be35fdb5a69487dcaf28cd077cd08a2095c0f31bdc03ccd61e",
+      "source_path": "test/o/G09_S05_O01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s01/external_g03_s01_o_01.wav",
+      "sha256": "f17b46239ca1810c984609fda9b044fcc1efa58b34331b757dd6af23717f4b68",
+      "source_path": "test/o/Kel3_S01_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s02/external_g03_s02_o_01.wav",
+      "sha256": "7193ffda39cecc66e489d05132f9bd0f56e825570d37267b2d5dd0c360a1a480",
+      "source_path": "test/o/Kel3_S02_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s03/external_g03_s03_o_01.wav",
+      "sha256": "0d9a0fa7c23fd25465e6c72de47b29510cd0d41aab806da748b33051dbf778f4",
+      "source_path": "test/o/Kel3_S03_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s05/external_g03_s05_o_01.wav",
+      "sha256": "842c7a58cf2c77c59a81c652bc1dc34f20abcbe158c686fa4efb3c9334603b7b",
+      "source_path": "test/o/Kel3_S05_O.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s03/external_g04_s03_u_01.wav",
+      "sha256": "2401788abeb78069ad77f06128e993687001b30e35fe93fd505e5def14ebe9d3",
+      "source_path": "test/u/G04_S03_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g04_s04/external_g04_s04_u_01.wav",
+      "sha256": "2327e7b17dac7bc67f3c08597a71abc61d4d3f4e17b57879221aa972a4186463",
+      "source_path": "test/u/G04_S04_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s01/external_g07_s01_u_01.wav",
+      "sha256": "07bd91bf2c8c6ad69ef911e30aefce4cddfbe27f72e60ba837f02ab4c9a63788",
+      "source_path": "test/u/G07_S01_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s02/external_g07_s02_u_01.wav",
+      "sha256": "84d5def6fa7073e0a3b32b1b272ad8d65a0c2a8bbbae2e4df58c6996aede7534",
+      "source_path": "test/u/G07_S02_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s03/external_g07_s03_u_01.wav",
+      "sha256": "8275c4f2939a7f97267f5179e7482bb554286681bde655e3a9dac6be22a1ec7f",
+      "source_path": "test/u/G07_S03_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s04/external_g07_s04_u_01.wav",
+      "sha256": "c8553616ced525a931abafda8af78cb34478bd131ae5489146337652ad9126cd",
+      "source_path": "test/u/G07_S04_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g07_s05/external_g07_s05_u_01.wav",
+      "sha256": "e1559f5384b42af50c33feec5f64fbd7b4cb63aeff5b66bb592a9d2872691508",
+      "source_path": "test/u/G07_S05_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s01/external_g09_s01_u_01.wav",
+      "sha256": "0dcd630a957abda0eba1d458c752f3d6e74cacc5022d70e76956458b99f22a25",
+      "source_path": "test/u/G09_S01_U01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s02/external_g09_s02_u_01.wav",
+      "sha256": "6cd210eda590057735ad9f19add2d27a2623e381eea1cfff879fd10fbd7c6a39",
+      "source_path": "test/u/G09_S02_U01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s03/external_g09_s03_u_01.wav",
+      "sha256": "fc866ec451f644b5ce252fff17c9081c9f4a86cf0f1452d24afc844667407fdf",
+      "source_path": "test/u/G09_S03_U01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s04/external_g09_s04_u_01.wav",
+      "sha256": "eb0b40e9f534425dd194e4abefc9d08caa2fd6c34283387cf20fb8dac4aef92f",
+      "source_path": "test/u/G09_S04_U01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g09_s05/external_g09_s05_u_01.wav",
+      "sha256": "743c1d728cf3c62b8f1a8b0e822978e52bfc2a8992480f662dd4a491f093cbdf",
+      "source_path": "test/u/G09_S05_U01.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s01/external_g03_s01_u_01.wav",
+      "sha256": "6d573d01c55ea49319bdb3c72e53529799c76136bae5408b248a3edc63f30125",
+      "source_path": "test/u/Kel3_S01_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s02/external_g03_s02_u_01.wav",
+      "sha256": "c8f8ef2c8cebbc8c1a34090acc8b847e38d6124bbb2406ab8a01a4e860a949a3",
+      "source_path": "test/u/Kel3_S02_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s03/external_g03_s03_u_01.wav",
+      "sha256": "acc5e1065ef99a1bba724405d5b559135c6845212c5c7efa2996c78a1813d099",
+      "source_path": "test/u/Kel3_S03_U.wav"
+    },
+    {
+      "canonical_path": "test/open_speakers/external_g03_s05/external_g03_s05_u_01.wav",
+      "sha256": "48fd2c7b4dcd7b19fa4f2c151c89bddc65a5b7aad12ebf882b3787dd004f548c",
+      "source_path": "test/u/Kel3_S05_U.wav"
+    },
+    {
       "canonical_path": "template/speaker02/speaker02_a_01.wav",
       "sha256": "52aab98ad4383270067e1816a71a2555938ca710303c351b9e8da55f781e2c80",
       "source_path": "train/a/Allen_A1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker02/speaker02_a_02.wav",
+      "canonical_path": "test/closed_speakers/speaker02/speaker02_a_02.wav",
       "sha256": "7b6954a9297d645e59619e118f30128931b5352d280315298497cf7649f57cc3",
       "source_path": "train/a/Allen_A2.wav"
     },
@@ -25,7 +425,7 @@
       "source_path": "train/a/Haegen_A1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker03/speaker03_a_02.wav",
+      "canonical_path": "test/closed_speakers/speaker03/speaker03_a_02.wav",
       "sha256": "8cf7c56d97c5b90f40c85185aec5cf97c54fa7a05a686e0685ad871b6e8244e9",
       "source_path": "train/a/Haegen_A2.wav"
     },
@@ -35,7 +435,7 @@
       "source_path": "train/a/Indra_A1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker05/speaker05_a_02.wav",
+      "canonical_path": "test/closed_speakers/speaker05/speaker05_a_02.wav",
       "sha256": "984cd45def96a8f42139e14bef4febec956b0f088bc96492c02a0a1ba29806dc",
       "source_path": "train/a/Indra_A2.wav"
     },
@@ -45,7 +445,7 @@
       "source_path": "train/a/Nathan_A1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker04/speaker04_a_02.wav",
+      "canonical_path": "test/closed_speakers/speaker04/speaker04_a_02.wav",
       "sha256": "7520c31e1b03fe5338a1d6f9970e0742273c571acc4232ebb56dae29d81fa0f9",
       "source_path": "train/a/Nathan_A2.wav"
     },
@@ -55,7 +455,7 @@
       "source_path": "train/a/Peter_A1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker01/speaker01_a_02.wav",
+      "canonical_path": "test/closed_speakers/speaker01/speaker01_a_02.wav",
       "sha256": "ae8876a26b5aa3676a0dafae0e750a1e6ba8d803dd4ee34f6fca91b30fe8b63c",
       "source_path": "train/a/Peter_A2.wav"
     },
@@ -65,7 +465,7 @@
       "source_path": "train/e/Allen_E1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker02/speaker02_e_02.wav",
+      "canonical_path": "test/closed_speakers/speaker02/speaker02_e_02.wav",
       "sha256": "5d2dd2e01c6c89e9282c99b8ec2abcda9e8c821c0712926d2fa1f43fcd24b55c",
       "source_path": "train/e/Allen_E2.wav"
     },
@@ -75,7 +475,7 @@
       "source_path": "train/e/Haegen_E1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker03/speaker03_e_02.wav",
+      "canonical_path": "test/closed_speakers/speaker03/speaker03_e_02.wav",
       "sha256": "da36d08ca96eca270ce4a73dc2c427b3961a8c5dc4c9bc9de5c3feb793ba27d6",
       "source_path": "train/e/Haegen_E2.wav"
     },
@@ -85,7 +485,7 @@
       "source_path": "train/e/Indra_E1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker05/speaker05_e_02.wav",
+      "canonical_path": "test/closed_speakers/speaker05/speaker05_e_02.wav",
       "sha256": "c46ed974aae9f7b8e5577c918e21fdff5bf20fd82505cb9959885d6d0bc51763",
       "source_path": "train/e/Indra_E2.wav"
     },
@@ -95,7 +495,7 @@
       "source_path": "train/e/Nathaniel_E1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker04/speaker04_e_02.wav",
+      "canonical_path": "test/closed_speakers/speaker04/speaker04_e_02.wav",
       "sha256": "5f182e11a494f5a59a23d90656c79e87f843043bc3b175d9000b246f55e538db",
       "source_path": "train/e/Nathaniel_E2.wav"
     },
@@ -105,7 +505,7 @@
       "source_path": "train/e/S01_E_01.wav"
     },
     {
-      "canonical_path": "test/closed/speaker01/speaker01_e_02.wav",
+      "canonical_path": "test/closed_speakers/speaker01/speaker01_e_02.wav",
       "sha256": "b06eb7a5f7d6980d8c099fe1432147a99ac7e175b0958ae02266add20546a644",
       "source_path": "train/e/S01_E_02.wav"
     },
@@ -115,7 +515,7 @@
       "source_path": "train/i/Allen_I1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker02/speaker02_i_02.wav",
+      "canonical_path": "test/closed_speakers/speaker02/speaker02_i_02.wav",
       "sha256": "dab88f95b90071f5143a2db55085cd2eda01d7f5c49d436af77a5b0d57f87ed0",
       "source_path": "train/i/Allen_I2.wav"
     },
@@ -125,7 +525,7 @@
       "source_path": "train/i/Haegen_I1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker03/speaker03_i_02.wav",
+      "canonical_path": "test/closed_speakers/speaker03/speaker03_i_02.wav",
       "sha256": "e4a873d7b9780e454f153561c3b9964c3b040b1c04f082304df2ae5598937b0a",
       "source_path": "train/i/Haegen_I2.wav"
     },
@@ -135,7 +535,7 @@
       "source_path": "train/i/Indra_I1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker05/speaker05_i_02.wav",
+      "canonical_path": "test/closed_speakers/speaker05/speaker05_i_02.wav",
       "sha256": "76b4db5cf21c627e916f00ad1fd60f1df216c3869578012dfd4779b7148f2777",
       "source_path": "train/i/Indra_I2.wav"
     },
@@ -145,7 +545,7 @@
       "source_path": "train/i/Nathaniel_I1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker04/speaker04_i_02.wav",
+      "canonical_path": "test/closed_speakers/speaker04/speaker04_i_02.wav",
       "sha256": "9ae8d93b313f75ede0860091c48fd16157bfdc9f2cf1a491621d855d8b9872f0",
       "source_path": "train/i/Nathaniel_I2.wav"
     },
@@ -155,7 +555,7 @@
       "source_path": "train/i/S01_I_01.wav"
     },
     {
-      "canonical_path": "test/closed/speaker01/speaker01_i_02.wav",
+      "canonical_path": "test/closed_speakers/speaker01/speaker01_i_02.wav",
       "sha256": "43b0de6db001dbb28fdb7fc6e129def2d70e7be3a2b0bdbc8d0b9242a9e75f93",
       "source_path": "train/i/S01_I_02.wav"
     },
@@ -165,7 +565,7 @@
       "source_path": "train/o/Allen_O1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker02/speaker02_o_02.wav",
+      "canonical_path": "test/closed_speakers/speaker02/speaker02_o_02.wav",
       "sha256": "4f5cf06b241c511a6c4d806e913c75db2123b4ea4ffe73fa4ef0ed46869ad355",
       "source_path": "train/o/Allen_O2.wav"
     },
@@ -175,7 +575,7 @@
       "source_path": "train/o/Haegen_O1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker03/speaker03_o_02.wav",
+      "canonical_path": "test/closed_speakers/speaker03/speaker03_o_02.wav",
       "sha256": "a69750de88ca15a4c632df319ac625e5904432c90b4baec85d4a849df3c0ca3c",
       "source_path": "train/o/Haegen_O2.wav"
     },
@@ -185,7 +585,7 @@
       "source_path": "train/o/Indra_O1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker05/speaker05_o_02.wav",
+      "canonical_path": "test/closed_speakers/speaker05/speaker05_o_02.wav",
       "sha256": "db489e694672adcf0c3f36fcbf1d4003c2f2a9f39dfee8730990d9d385bb834a",
       "source_path": "train/o/Indra_O2.wav"
     },
@@ -195,7 +595,7 @@
       "source_path": "train/o/Nathaniel_O1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker04/speaker04_o_02.wav",
+      "canonical_path": "test/closed_speakers/speaker04/speaker04_o_02.wav",
       "sha256": "d59fc27c995a30b3e517d361120ae7412d97d1e5017c93db088910decd0a0e93",
       "source_path": "train/o/Nathaniel_O2.wav"
     },
@@ -205,7 +605,7 @@
       "source_path": "train/o/S01_O_01.wav"
     },
     {
-      "canonical_path": "test/closed/speaker01/speaker01_o_02.wav",
+      "canonical_path": "test/closed_speakers/speaker01/speaker01_o_02.wav",
       "sha256": "6ce8a4c43f6b86b2301b90d9e4db0907d0a455584c2c62c4a16ddc30767922f1",
       "source_path": "train/o/S01_O_02.wav"
     },
@@ -215,7 +615,7 @@
       "source_path": "train/u/Allen_U1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker02/speaker02_u_02.wav",
+      "canonical_path": "test/closed_speakers/speaker02/speaker02_u_02.wav",
       "sha256": "6418d4324f762f09472d9057adc4a81434ec48e89a03bd2bca946476255c38db",
       "source_path": "train/u/Allen_U2.wav"
     },
@@ -225,7 +625,7 @@
       "source_path": "train/u/Haegen_U1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker03/speaker03_u_02.wav",
+      "canonical_path": "test/closed_speakers/speaker03/speaker03_u_02.wav",
       "sha256": "4a33c8ea36563a2c5ff843d473d19b05a1b16aad593403bbf73c9aa8fe2d0301",
       "source_path": "train/u/Haegen_U2.wav"
     },
@@ -235,7 +635,7 @@
       "source_path": "train/u/Indra_U1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker05/speaker05_u_02.wav",
+      "canonical_path": "test/closed_speakers/speaker05/speaker05_u_02.wav",
       "sha256": "83a1572d5093c09131575f8cfd2a50363b43fb4066752b86a1892409f915750a",
       "source_path": "train/u/Indra_U2.wav"
     },
@@ -245,7 +645,7 @@
       "source_path": "train/u/Nathaniel_U1.wav"
     },
     {
-      "canonical_path": "test/closed/speaker04/speaker04_u_02.wav",
+      "canonical_path": "test/closed_speakers/speaker04/speaker04_u_02.wav",
       "sha256": "b3d3bab409de6cd364b3b11f6e27d2c0d332a50e4c8eaad22af027ca589348bd",
       "source_path": "train/u/Nathaniel_U2.wav"
     },
@@ -255,134 +655,9 @@
       "source_path": "train/u/S01_U_01.wav"
     },
     {
-      "canonical_path": "test/closed/speaker01/speaker01_u_02.wav",
+      "canonical_path": "test/closed_speakers/speaker01/speaker01_u_02.wav",
       "sha256": "c34c26f4d85a2a035f624d17b12bb2a13d6b68fc15393f96df82653038de564a",
       "source_path": "train/u/S01_U_02.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s01/external_g07_s01_a_01.wav",
-      "sha256": "f9aed0a065ea4b224293d880357ac5c65474508df5b07f3ad03c7ad6833ca1c3",
-      "source_path": "test/a/G07_S01_A.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s02/external_g07_s02_a_01.wav",
-      "sha256": "620853fbd28787b43324fc456020aec9fb77461ab52e386984211864fd6e07b9",
-      "source_path": "test/a/G07_S02_A.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s03/external_g07_s03_a_01.wav",
-      "sha256": "eb1dd7633f8163cb676571b68895394e1239c8aafd100ecbf6c9c615e4701066",
-      "source_path": "test/a/G07_S03_A.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s04/external_g07_s04_a_01.wav",
-      "sha256": "fc90eb993c6af56209caa0f7be8c294073e93027c0c19b1f35d5c8a7bdc51ea0",
-      "source_path": "test/a/G07_S04_A.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s05/external_g07_s05_a_01.wav",
-      "sha256": "1311a55c55bb3eaf0ae56bae7166551e841924ac60838a71a7bfd2cabad94e96",
-      "source_path": "test/a/G07_S05_A.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s01/external_g07_s01_i_01.wav",
-      "sha256": "80a2de357b91a989581b53dd6047a869b82b1e5c45a00acced331933ee5c3b2b",
-      "source_path": "test/i/G07_S01_I.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s02/external_g07_s02_i_01.wav",
-      "sha256": "c44e1a7e408acf724fc6478399bc4c89500df578e3bae61d3bdadd4b193d3248",
-      "source_path": "test/i/G07_S02_I.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s03/external_g07_s03_i_01.wav",
-      "sha256": "3f5231625b91a296f461a098ad72792febefcc2e946fdb5c2fa9ff8dea6530df",
-      "source_path": "test/i/G07_S03_I.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s04/external_g07_s04_i_01.wav",
-      "sha256": "c9adf27d89c1f59a7bb59d9d78b4e8d20163c6f27d23960a571b7547b53cc784",
-      "source_path": "test/i/G07_S04_I.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s05/external_g07_s05_i_01.wav",
-      "sha256": "1ce1bfda42881264ab074e0db7df0617221ffdf9019c3880455fb34dffd02318",
-      "source_path": "test/i/G07_S05_I.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s01/external_g07_s01_u_01.wav",
-      "sha256": "07bd91bf2c8c6ad69ef911e30aefce4cddfbe27f72e60ba837f02ab4c9a63788",
-      "source_path": "test/u/G07_S01_U.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s02/external_g07_s02_u_01.wav",
-      "sha256": "84d5def6fa7073e0a3b32b1b272ad8d65a0c2a8bbbae2e4df58c6996aede7534",
-      "source_path": "test/u/G07_S02_U.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s03/external_g07_s03_u_01.wav",
-      "sha256": "8275c4f2939a7f97267f5179e7482bb554286681bde655e3a9dac6be22a1ec7f",
-      "source_path": "test/u/G07_S03_U.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s04/external_g07_s04_u_01.wav",
-      "sha256": "c8553616ced525a931abafda8af78cb34478bd131ae5489146337652ad9126cd",
-      "source_path": "test/u/G07_S04_U.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s05/external_g07_s05_u_01.wav",
-      "sha256": "e1559f5384b42af50c33feec5f64fbd7b4cb63aeff5b66bb592a9d2872691508",
-      "source_path": "test/u/G07_S05_U.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s01/external_g07_s01_e_01.wav",
-      "sha256": "f3ba8bb7d5ab054a9c226a6093b8053f1392770e17a20b0171caeb9bd6f6d495",
-      "source_path": "test/e/G07_S01_E.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s02/external_g07_s02_e_01.wav",
-      "sha256": "31c6f1124134857fac6e44949748cc406f891bc9dd05963ee7be4ddb2c330c41",
-      "source_path": "test/e/G07_S02_E.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s03/external_g07_s03_e_01.wav",
-      "sha256": "0f6185aa73aa7b2dbdbac13c76e99624ad7f2d6fd503e412d1ad46f91785c2e3",
-      "source_path": "test/e/G07_S03_E.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s04/external_g07_s04_e_01.wav",
-      "sha256": "1e026f38902c631112dd0202a09ae29e861a2bc2540b56a0d72121d8144f554b",
-      "source_path": "test/e/G07_S04_E.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s05/external_g07_s05_e_01.wav",
-      "sha256": "095a16d61a4e901da49b6d4e661073b404e6bc62d1bfd2d968b518408ac11e23",
-      "source_path": "test/e/G07_S05_E.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s01/external_g07_s01_o_01.wav",
-      "sha256": "462d97b417c70ab65ff4de0d0fffca694e7cde64d6ab601a1de03e89f3aa450d",
-      "source_path": "test/o/G07_S01_O.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s02/external_g07_s02_o_01.wav",
-      "sha256": "617e432419067b26378c57b8a5cd3bf8f4d0e0c7c22a11ebe4e9c10954cc97fd",
-      "source_path": "test/o/G07_S02_O.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s03/external_g07_s03_o_01.wav",
-      "sha256": "431da9b5e499f2e87a5e20b9a5b050d155698f247cfea756ae81a794449f6e10",
-      "source_path": "test/o/G07_S03_O.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s04/external_g07_s04_o_01.wav",
-      "sha256": "1e417c2bbe318ccc3ff2f4238cd97e20c93d4db9bb291062bc2e1f3b4f1ae822",
-      "source_path": "test/o/G07_S04_O.wav"
-    },
-    {
-      "canonical_path": "test/open/external_g07_s05/external_g07_s05_o_01.wav",
-      "sha256": "7edfd79ab38a515e19e9aabe07a213c0dd00764cfedbbfdd6802ada33b59ecd2",
-      "source_path": "test/o/G07_S05_O.wav"
     }
   ]
 }

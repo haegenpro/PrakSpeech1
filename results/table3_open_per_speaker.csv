@@ -1,7 +1,18 @@
 Speaker (open),DTW Open Speakers,Gaussian Open Speakers,Average
+external_g03_s01,100.00,80.00,90.00
+external_g03_s02,60.00,60.00,60.00
+external_g03_s03,60.00,80.00,70.00
+external_g03_s05,100.00,100.00,100.00
+external_g04_s03,80.00,80.00,80.00
+external_g04_s04,60.00,60.00,60.00
 external_g07_s01,80.00,100.00,90.00
 external_g07_s02,80.00,60.00,70.00
 external_g07_s03,100.00,100.00,100.00
 external_g07_s04,100.00,60.00,80.00
 external_g07_s05,80.00,80.00,80.00
-Average,88.00,80.00,84.00
+external_g09_s01,100.00,60.00,80.00
+external_g09_s02,100.00,100.00,100.00
+external_g09_s03,80.00,80.00,80.00
+external_g09_s04,100.00,80.00,90.00
+external_g09_s05,100.00,80.00,90.00
+Average,86.25,78.75,82.50
