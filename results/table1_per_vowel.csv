@@ -1,0 +1,7 @@
+Vowel,DTW Closed Recording,DTW Closed Speakers,DTW Open Speakers,Gaussian Closed Recording,Gaussian Closed Speakers,Gaussian Open Speakers
+a,100.00,100.00,100.00,100.00,100.00,100.00
+i,100.00,100.00,100.00,100.00,100.00,80.00
+u,100.00,100.00,100.00,100.00,100.00,100.00
+e,100.00,80.00,100.00,100.00,100.00,60.00
+o,80.00,80.00,40.00,100.00,100.00,60.00
+Average Accuracy,96.00,92.00,88.00,100.00,100.00,80.00
