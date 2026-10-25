@@ -14,10 +14,10 @@ Identitas internal ditetapkan sebagai speaker01 (Peter Wongsoredjo), speaker02
 (Jessica Allen), speaker03 (Haegen Quinston), speaker04 (Nathaniel JR), dan
 speaker05 (Maheswara Bayu Kaindra). Variasi nama pada berkas sumber dipetakan
 secara eksplisit, termasuk Peter/S01, Nathan/Nathaniel, serta Indra. Setiap rekaman
-disimpan sekali dengan nama baku pada direktori kanonis. Salinan sumber dihapus
-hanya setelah seluruh pemetaan lolos validasi dan isi tujuan terbukti identik
-berdasarkan SHA256. Sumber historis, tujuan, alias, dan hash tetap dicatat dalam
-manifest impor, termasuk setelah setup dijalankan ulang.
+disimpan dengan nama baku pada direktori kanonis. Skrip setup memeriksa seluruh
+pemetaan dan membandingkan isi berkas secara langsung sebelum menyalin. Tujuan
+yang identik dilewati, konflik ditolak, dan sumber dipertahankan. Dataset yang
+sudah kanonis tidak memerlukan impor ulang atau manifest impor.
 
 ## B. Pembagian Data
 
@@ -51,6 +51,13 @@ Keduanya dapat memengaruhi transisi dan energi vokal sehingga harus diterapkan
 secara konsisten pada seluruh partisi. Tidak digunakan parameter preprocessing
 yang dipelajari dari data pengujian.
 
+Operasi tersebut berbeda dari pemotongan frame fitur pada modul DTW dan Gaussian.
+Kedua modul secara default mempertahankan rentang frame dengan energi log dalam
+20 dB dari puncak. Pemotongan ini dilakukan setelah MFCC dihitung dan tidak
+menghitung ulang delta pada batas baru. Kebijakan yang sama diterapkan pada data
+latih dan masukan pengenalan. Konfigurasi ekstraksi dipusatkan pada DEFAULT_CONFIG;
+CLI hanya menerima direktori data dan direktori output.
+
 ## D. Ekstraksi MFCC 39 Dimensi
 
 Praktikum mensyaratkan 39 dimensi per frame. Implementasi ini memilih susunan
@@ -83,11 +90,17 @@ Setiap rekaman menghasilkan satu berkas NumPy pada hierarki partisi dan pembicar
 yang bersesuaian. Sebagai contoh, speaker01_a_01.wav menghasilkan
 features/template/speaker01/speaker01_a_01.npy. Metadata CSV menyimpan identitas,
 label, lokasi sumber, properti audio sebelum dan sesudah preprocessing, jumlah
-frame, dimensi fitur, lokasi fitur, dan status validasi. Manifest ekstraksi mencatat
-konfigurasi, versi dependensi, serta hash audio dan fitur.
+frame, dimensi fitur, lokasi fitur, dan status validasi. Path sumber dan audio
+berupa path kanonis relatif. Setiap eksekusi menghitung ulang seluruh fitur serta
+menulis ulang metadata; tidak ada cache atau manifest ekstraksi. Versi dependensi
+dicatat dalam dokumentasi dan requirements sebagai informasi eksperimen, tanpa
+menghalangi ekstraksi atau pemuatan ketika versi berubah.
 
 API load_dataset mengembalikan daftar rekaman dengan atribut features, vowel,
-speaker, dan file_path. Sistem DTW menerima urutan frame utuh. Modul Gaussian
+speaker, dan file_path. Pemuatan memvalidasi array, identitas, partisi, dan path
+relatif tanpa membaca WAV asli. file_path menjadi identitas WAV yang diresolusikan
+terhadap direktori data di samping direktori fitur. Loader memberikan urutan frame
+utuh; modul DTW dan Gaussian menerapkan pemotongan frame masing-masing. Gaussian
 dapat menggabungkan frame menurut vokal dari partisi template untuk estimasi
 parameternya sendiri. Tugas 1 tidak menghitung template rata-rata, parameter
 Gaussian, prediksi, atau akurasi pengenalan.
@@ -96,16 +109,21 @@ Gaussian, prediksi, atau akurasi pengenalan.
 
 Validasi memeriksa kelengkapan 50 rekaman internal, kesesuaian nama dan direktori,
 pemisahan identitas internal dan eksternal, keberhasilan decoding, serta duplikasi
-audio secara eksak. Setiap matriks fitur harus berdimensi dua, memiliki tepat
+audio secara eksak, serta kelengkapan lima vokal setiap pembicara eksternal yang
+ditemukan. Jumlah pembicara eksternal tidak ditetapkan dalam kode. Setiap matriks
+fitur harus berdimensi dua, memiliki tepat
 39 kolom, memuat sedikitnya satu frame, dan seluruh nilainya harus finite.
-Penyimpanan serta pemuatan diuji untuk menjaga bentuk dan nilai fitur. Hash
-mencegah penggunaan fitur lama setelah audio atau hasil ekstraksi berubah.
+Penyimpanan serta pemuatan diuji untuk menjaga bentuk dan nilai fitur. Pemeriksaan
+duplikasi audio hanya dilakukan dalam validasi eksplisit. Hash audio dan fitur
+tidak diperiksa saat ekstraksi atau loading; jalankan ekstraksi ulang setelah audio
+atau konfigurasi berubah. Berkas fitur hilang atau tidak valid menghasilkan error.
 
 Pengujian perangkat lunak menggunakan sinyal sintetis hanya pada direktori
 sementara pytest. Sinyal tersebut tidak dimasukkan ke dataset atau digunakan
 sebagai hasil eksperimen pengenalan. Skenario meliputi konversi stereo, resampling,
 turunan temporal, masukan sangat pendek, kegagalan decoding, indeks dataset,
-konflik impor, persistensi, serta kompatibilitas cache.
+konflik impor, persistensi, regenerasi fitur, beberapa kelompok eksternal,
+kelengkapan vokal, serta loading tanpa WAV asli atau manifest.
 
 Pada pemeriksaan 25 Oktober 2026 (WIB), ditemukan 25 rekaman template, 25 rekaman
 closed-speaker, dan 80 rekaman open-speaker dari 16 pembicara eksternal. Seluruh
@@ -113,8 +131,10 @@ closed-speaker, dan 80 rekaman open-speaker dari 16 pembicara eksternal. Seluruh
 ditemukan rekaman internal hilang, vokal eksternal hilang, nama kanonis tidak valid,
 atau duplikasi audio eksak. Ekstraksi menghasilkan 130 matriks tanpa kegagalan,
 dengan rentang 33–495 frame dan total 22,147 frame. Pengulangan ekstraksi
-menggunakan kembali seluruh 130 hasil yang kompatibel. Semua hash audio unik
-cocok dengan kondisi sebelum migrasi; sumber historis tetap tersimpan di manifest.
+menghitung ulang seluruh 130 hasil. Verifikasi refaktor membandingkan array sebelum
+dan sesudah regenerasi pada lingkungan yang sama: seluruh bentuk dan nilai identik.
+Karena fitur tidak berubah, refaktor ini tidak memerlukan pembangunan ulang model.
+Evaluasi yang memakai dataset open lama perlu diulang pada seluruh 80 rekaman.
 
 Angka tersebut merupakan pemeriksaan teknis, bukan bukti ketepatan pelafalan
 atau kinerja pengenalan. Perbarui angka apabila data atau konfigurasi berubah.
