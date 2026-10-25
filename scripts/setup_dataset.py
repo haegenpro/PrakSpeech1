@@ -1,4 +1,4 @@
-"""Consolidate recordings, verify hashes, and remove duplicate legacy originals."""
+"""Copy legacy recordings into canonical folders, preserving originals."""
 import argparse
 import json
 from pathlib import Path
