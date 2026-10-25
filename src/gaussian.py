@@ -6,11 +6,10 @@ from scipy.linalg import solve_triangular
 from .silence import trim_silence
 
 
-def fit_gaussian(frames: np.ndarray, alpha: float = 0.1, eps: float = 1e-6) -> dict[str, np.ndarray]:
+def fit_gaussian(frames: np.ndarray, eps: float = 1e-6) -> dict[str, np.ndarray]:
     mean = frames.mean(axis=0)
     centered = frames - mean
     cov = centered.T @ centered / max(len(frames) - 1, 1)
-    cov = (1 - alpha) * cov + alpha * np.diag(np.diag(cov))
     cov = cov + eps * np.trace(cov) / len(cov) * np.eye(len(cov))
     return {"mean": mean, "cov": cov}
 
@@ -23,13 +22,13 @@ def nll(frames: np.ndarray, model: dict[str, np.ndarray]) -> float:
     return float(per_frame.mean())
 
 
-def build_models(records: list[dict], alpha: float = 0.1, eps: float = 1e-6,
+def build_models(records: list[dict], eps: float = 1e-6,
                  trim: bool = True) -> dict[str, dict[str, np.ndarray]]:
     groups = {}
     for record in records:
         features = trim_silence(record["features"]) if trim else record["features"]
         groups.setdefault(record["vowel"], []).append(features)
-    return {vowel: fit_gaussian(np.concatenate(sequences), alpha, eps)
+    return {vowel: fit_gaussian(np.concatenate(sequences), eps)
             for vowel, sequences in sorted(groups.items())}
 
 

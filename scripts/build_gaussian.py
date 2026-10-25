@@ -11,9 +11,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--features-dir", default="features")
     parser.add_argument("--output", default="models/gaussian_models.npz")
-    parser.add_argument("--alpha", type=float, default=0.1)
     args = parser.parse_args()
-    models = build_models(load_dataset("template", args.features_dir), args.alpha)
+    models = build_models(load_dataset("template", args.features_dir))
     save_models(models, args.output)
     for vowel, model in models.items():
         print(f"{vowel}: mean {model['mean'].shape}, cov {model['cov'].shape}")
